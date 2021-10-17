@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MediatR;
 
 namespace MerchandisingManagement.WebApi
 {
@@ -29,16 +30,8 @@ namespace MerchandisingManagement.WebApi
 			services.AddDbContext<MerchandisingManagementContext>(options =>
 				options.UseSqlServer(
 					Configuration.GetConnectionString("MerchandisingManagementDB")), ServiceLifetime.Singleton);
-
-
-
-			//services.AddSwaggerGen(c => {
-			//	c.SwaggerDoc("v1", new OpenApiInfo
-			//	{
-			//		Title = "Employee.API",
-			//		Version = "v1"
-			//	});
-			//});
+			services.AddMediatR(typeof(Startup));
+			
 			#region AutoMapper Configuration
 			var mapperConfig = new MapperConfiguration(mc =>
 			{
@@ -49,7 +42,6 @@ namespace MerchandisingManagement.WebApi
 			var mapper = mapperConfig.CreateMapper();
 			services.AddSingleton(mapper);
 			#endregion
-			//services.AddMediatR(typeof(CreateEmployeeHandler).GetTypeInfo().Assembly);
 			#region Dependencies
 			services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
 			services.AddTransient<IProductRepository, ProductRepository>(); 

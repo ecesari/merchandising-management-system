@@ -23,6 +23,7 @@ namespace MerchandisingManagement.WebApi.Controllers
 
 
 		[HttpGet]
+
 		public async Task<ActionResult<GetProductsViewModel>> GetProducts([FromQuery] GetProductsQuery query)
 		{
 			return await _mediator.Send(query);
