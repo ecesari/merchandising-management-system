@@ -1,9 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using MediatR;
-using Microsoft.AspNetCore.Http;
+using MerchandisingManagement.Application.Product.Commands;
+using MerchandisingManagement.Application.Product.Queries.GetProducts;
+using MerchandisingManagement.Application.Product.Queries.GetProductsByStockRange;
+using MerchandisingManagement.Application.Product.Queries.SearchProducts;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -11,65 +12,59 @@ namespace MerchandisingManagement.WebApi.Controllers
 {
 	[Route("api/[controller]")]
 	[ApiController]
-	public class ProductController : ControllerBase
+	public class ProductController : WebApiControllerBase
 	{
-
-
 		private readonly IMediator _mediator;
-		public EmployeeController(IMediator mediator)
+
+		public ProductController( IMediator mediator)
 		{
 			_mediator = mediator;
 		}
 
+
 		[HttpGet]
-		[ProducesResponseType(StatusCodes.Status200OK)]
-		public async Task<List<Employee.Core.Entities.Employee>> Get()
+		public async Task<ActionResult<GetProductsViewModel>> GetProducts([FromQuery] GetProductsQuery query)
 		{
-			return await _mediator.Send(new GetAllEmployeeQuery());
+			return await _mediator.Send(query);
 		}
-		[HttpPost]
-		[ProducesResponseType(StatusCodes.Status200OK)]
-		public async Task<ActionResult<EmployeeResponse>> CreateEmployee([FromBody] CreateEmployeeCommand command)
-		{
-			var result = await _mediator.Send(command);
-			return Ok(result);
-		}
-		private readonly ILogger<ProductController> _logger;
 
-		public ProductController(ILogger<ProductController> logger)
-		{
-			_logger = logger;
-		}
-		// GET: api/<Product>
 		[HttpGet]
-		public IEnumerable<string> Get()
+		public async Task<ActionResult<SearchProductsViewModel>> SearchProducts([FromQuery] SearchProductsQuery query)
 		{
-			return new string[] { "value1", "value2" };
+			return await _mediator.Send(query);
+		}
+		
+		[HttpGet]
+		public async Task<ActionResult<ProductByStockRangeViewModel>> GetProductsInStockRange([FromQuery] GetProductsByStockRangeQuery query)
+		{
+			return await _mediator.Send(query);
 		}
 
-		// GET api/<Product>/5
-		[HttpGet("{id}")]
-		public string Get(int id)
-		{
-			return "value";
-		}
-
-		// POST api/<Product>
 		[HttpPost]
-		public void Post([FromBody] string value)
+		public async Task<ActionResult<int>> CreateProduct(CreateProductCommand command)
 		{
+			return await _mediator.Send(command);
 		}
 
-		// PUT api/<Product>/5
 		[HttpPut("{id}")]
-		public void Put(int id, [FromBody] string value)
+		public async Task<ActionResult> Update(int id, UpdateProductCommand command)
 		{
+			if (id != command.Id)
+			{
+				return new BadRequestResult();
+			}
+
+			await Mediator.Send(command);
+
+			return new NoContentResult();
 		}
 
-		// DELETE api/<Product>/5
 		[HttpDelete("{id}")]
-		public void Delete(int id)
+		public async Task<ActionResult> Delete(int id)
 		{
+			await Mediator.Send(new DeleteProductCommand { Id = id });
+
+			return new NoContentResult();
 		}
 	}
 }

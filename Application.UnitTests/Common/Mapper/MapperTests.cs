@@ -4,6 +4,7 @@ using AutoMapper;
 using MerchandisingManagement.Application.Common.Mappers;
 using MerchandisingManagement.Application.Product.Commands;
 using MerchandisingManagement.Application.Product.Queries.GetProducts;
+using MerchandisingManagement.Application.Product.Queries.GetProductsByStockRange;
 using MerchandisingManagement.Application.Product.Queries.SearchProducts;
 using Xunit;
 
@@ -99,6 +100,29 @@ namespace MerchandisingManagement.Application.UnitTests.Common.Mapper
 			var productList = new List<Domain.Entities.Product> { product, product2 };
 
 			var viewModel = _mapper.Map<GetProductsViewModel>(productList);
+
+			Assert.NotNull(viewModel);
+			Assert.NotEmpty(viewModel.Products);
+			Assert.NotNull(viewModel.Products.FirstOrDefault());
+			Assert.Equal(2, viewModel.Products.Count);
+			Assert.Equal(id, viewModel.Products.FirstOrDefault().Id);
+			Assert.Equal(title, viewModel.Products.FirstOrDefault().Title);
+			Assert.Equal(description, viewModel.Products.FirstOrDefault().Description);
+			Assert.Equal(stockQuantity, viewModel.Products.FirstOrDefault().StockQuantity);
+
+		}
+
+
+		[Theory]
+		[InlineData(1, "Sample Title", "Sample Description", 50)]
+		[InlineData(2, "Title", "Description", 0)]
+		public void GetProductsInRangeMappings(int id, string title, string description, int stockQuantity)
+		{
+			var product = Domain.Entities.Product.Create(id, title, description, stockQuantity);
+			var product2 = Domain.Entities.Product.Create(id, title, description, stockQuantity);
+			var productList = new List<Domain.Entities.Product> { product, product2 };
+
+			var viewModel = _mapper.Map<ProductByStockRangeViewModel>(productList);
 
 			Assert.NotNull(viewModel);
 			Assert.NotEmpty(viewModel.Products);

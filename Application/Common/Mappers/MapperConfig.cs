@@ -2,6 +2,7 @@
 using AutoMapper;
 using MerchandisingManagement.Application.Product.Commands;
 using MerchandisingManagement.Application.Product.Queries.GetProducts;
+using MerchandisingManagement.Application.Product.Queries.GetProductsByStockRange;
 using MerchandisingManagement.Application.Product.Queries.SearchProducts;
 
 namespace MerchandisingManagement.Application.Common.Mappers
@@ -21,6 +22,10 @@ namespace MerchandisingManagement.Application.Common.Mappers
 
 			CreateMap<Domain.Entities.Product, GetProductsDto>();
 			CreateMap<IReadOnlyList<Domain.Entities.Product>, GetProductsViewModel>()
+				.ForMember(dest => dest.Products, opt => opt.MapFrom(src => src));
+
+			CreateMap<Domain.Entities.Product, ProductByStockRangeDto>();
+			CreateMap<IReadOnlyList<Domain.Entities.Product>, ProductByStockRangeViewModel>()
 				.ForMember(dest => dest.Products, opt => opt.MapFrom(src => src));
 		}
 	}

@@ -53,35 +53,9 @@ namespace MerchandisingManagement.Domain.UnitTests.Specifications
 		}
 
 		[Fact]
-		public void ReturnsStockLowerThanCount()
+		public void ReturnsStockInRangeCount()
 		{
-			var spec = new StockLowerThanSpecification(40);
-
-			var result = GetProductCollection()
-				.AsQueryable()
-				.Where(spec.Criteria)
-				.Count();
-
-			Assert.Equal(5, result);
-		}
-
-		[Fact]
-		public void ReturnsStockLowerThan()
-		{
-			var spec = new StockLowerThanSpecification(50);
-
-			var result = GetProductCollection()
-				.AsQueryable()
-				.FirstOrDefault(spec.Criteria);
-			Assert.NotNull(result);
-			Assert.Equal(1, result.Id);
-		}
-
-
-		[Fact]
-		public void ReturnsStockHigherThanCount()
-		{
-			var spec = new StockHigherThanSpecification(40);
+			var spec = new StockInRangeSpecification(39, 51);
 
 			var result = GetProductCollection()
 				.AsQueryable()
@@ -92,15 +66,15 @@ namespace MerchandisingManagement.Domain.UnitTests.Specifications
 		}
 
 		[Fact]
-		public void ReturnsStockHigherThan()
+		public void ReturnsStockInRange()
 		{
-			var spec = new StockHigherThanSpecification(50);
+			var spec = new StockInRangeSpecification(29, 51);
 
 			var result = GetProductCollection()
 				.AsQueryable()
 				.FirstOrDefault(spec.Criteria);
 			Assert.NotNull(result);
-			Assert.Equal(6, result.Id);
+			Assert.Equal(3, result.Id);
 		}
 
 		[Fact]
