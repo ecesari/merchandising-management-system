@@ -10,8 +10,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MerchandisingManagement.WebApi.Controllers
 {
-	[Route("api/[controller]")]
-	[ApiController]
+	//[Route("api/[controller]")]
+	//[ApiController]
 	public class ProductController : WebApiControllerBase
 	{
 		private readonly IMediator _mediator;
