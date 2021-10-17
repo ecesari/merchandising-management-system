@@ -1,8 +1,8 @@
-﻿using Application.Product.Commands;
-using Application.Common.Interfaces;
-using FluentValidation;
+﻿using FluentValidation;
+using MerchandisingManagement.Application.Common.Interfaces;
+using MerchandisingManagement.Application.Product.Commands;
 
-namespace Application.Product.Validators
+namespace MerchandisingManagement.Application.Product.Validators
 {
 	class UpdateProductCommandValidator : AbstractValidator<CreateProductCommand>
 	{

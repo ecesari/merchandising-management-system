@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
-using Application.Product.Commands;
-using Application.Product.Queries.GetProducts;
-using Application.Product.Queries.SearchProducts;
 using AutoMapper;
+using MerchandisingManagement.Application.Product.Commands;
+using MerchandisingManagement.Application.Product.Queries.GetProducts;
+using MerchandisingManagement.Application.Product.Queries.SearchProducts;
 
-namespace Application.Common.Mappers
+namespace MerchandisingManagement.Application.Common.Mappers
 {
 	public class MapperConfig : Profile
 	{

@@ -1,6 +1,6 @@
 using System;
 
-namespace WebApi
+namespace MerchandisingManagement.WebApi
 {
 	public class WeatherForecast
 	{

@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Domain.Entities;
+using MerchandisingManagement.Domain.Entities;
 using Microsoft.Extensions.Logging;
 
-namespace Infrastructure.Data
+namespace MerchandisingManagement.Infrastructure.Data
 {
 	public class MerchandisingManagementContextSeed
 	{

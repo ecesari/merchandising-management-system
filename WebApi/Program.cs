@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace WebApi
+namespace MerchandisingManagement.WebApi
 {
 	public class Program
 	{

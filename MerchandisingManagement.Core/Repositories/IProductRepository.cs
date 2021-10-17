@@ -1,7 +1,6 @@
-﻿using System.Collections.Generic;
-using Domain.Entities;
+﻿using MerchandisingManagement.Domain.Entities;
 
-namespace Domain.Repositories
+namespace MerchandisingManagement.Domain.Repositories
 {
 	public interface IProductRepository :IBaseRepository<Product>
 	{

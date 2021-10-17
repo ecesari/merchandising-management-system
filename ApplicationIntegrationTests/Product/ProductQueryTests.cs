@@ -1,4 +1,4 @@
-﻿namespace ApplicationIntegrationTests.Product
+﻿namespace MerchandisingManagement.ApplicationIntegrationTests.Product
 {
 	class ProductQueryTests
 	{

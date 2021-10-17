@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Domain.Entities;
-using Domain.Specifications.Product;
+using MerchandisingManagement.Domain.Entities;
+using MerchandisingManagement.Domain.Specifications.Product;
 using Xunit;
 
-namespace Domain.UnitTests.Specifications
+namespace MerchandisingManagement.Domain.UnitTests.Specifications
 {
 	public class ProductSpecificationTests
 	{

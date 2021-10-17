@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Application.Common.Exceptions
+﻿namespace MerchandisingManagement.Application.Common.Exceptions
 {
 	class ApplicationException
 	{

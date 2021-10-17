@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Domain.Entities;
-using Domain.Repositories;
-using Domain.Specifications;
-using Infrastructure.Data;
+using MerchandisingManagement.Domain.Entities;
+using MerchandisingManagement.Domain.Repositories;
+using MerchandisingManagement.Domain.Specifications;
+using MerchandisingManagement.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 
-namespace Infrastructure.Repository.Base
+namespace MerchandisingManagement.Infrastructure.Repository.Base
 {
 	public class BaseRepository<T> :IBaseRepository<T> where T: BaseEntity
 	{

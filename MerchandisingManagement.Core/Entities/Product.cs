@@ -1,4 +1,4 @@
-﻿namespace Domain.Entities
+﻿namespace MerchandisingManagement.Domain.Entities
 {
 	public class Product : BaseEntity
 	{

@@ -1,7 +1,7 @@
-﻿using Domain.Entities;
+﻿using MerchandisingManagement.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace Infrastructure.Data
+namespace MerchandisingManagement.Infrastructure.Data
 {
 	public class MerchandisingManagementContext : DbContext
 	{

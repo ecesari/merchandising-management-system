@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
-using Domain.Entities;
+using MerchandisingManagement.Domain.Entities;
 
-namespace Domain.Repositories
+namespace MerchandisingManagement.Domain.Repositories
 {
 	interface ICategoryRepository : IBaseRepository<Category>
 	{

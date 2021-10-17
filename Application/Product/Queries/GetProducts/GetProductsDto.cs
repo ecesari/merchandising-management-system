@@ -1,4 +1,4 @@
-﻿namespace Application.Product.Queries.GetProducts
+﻿namespace MerchandisingManagement.Application.Product.Queries.GetProducts
 {
 	public class GetProductsDto
 	{

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Application.Product.Queries.SearchProducts
+namespace MerchandisingManagement.Application.Product.Queries.SearchProducts
 {
 	public class SearchProductsViewModel
 	{

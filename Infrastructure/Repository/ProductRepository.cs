@@ -1,11 +1,9 @@
-﻿using System.Collections.Generic;
-using Domain.Entities;
-using Domain.Repositories;
-using Domain.Specifications.Product;
-using Infrastructure.Data;
-using Infrastructure.Repository.Base;
+﻿using MerchandisingManagement.Domain.Entities;
+using MerchandisingManagement.Domain.Repositories;
+using MerchandisingManagement.Infrastructure.Data;
+using MerchandisingManagement.Infrastructure.Repository.Base;
 
-namespace Infrastructure.Repository
+namespace MerchandisingManagement.Infrastructure.Repository
 {
 	public class ProductRepository : BaseRepository<Product>, IProductRepository
 	{

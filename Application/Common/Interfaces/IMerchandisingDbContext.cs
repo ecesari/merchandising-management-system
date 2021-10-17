@@ -1,9 +1,9 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
-using Domain.Entities;
+using MerchandisingManagement.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace Application.Common.Interfaces
+namespace MerchandisingManagement.Application.Common.Interfaces
 {
 	public interface IMerchandisingDbContext
 	{

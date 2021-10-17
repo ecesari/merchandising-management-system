@@ -1,7 +1,4 @@
-﻿using System;
-using System.Linq.Expressions;
-
-namespace Domain.Specifications.Product
+﻿namespace MerchandisingManagement.Domain.Specifications.Product
 {
 	public class StockLowerThanSpecification : BaseSpecification<Entities.Product>
 	{

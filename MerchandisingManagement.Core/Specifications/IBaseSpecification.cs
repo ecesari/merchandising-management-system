@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq.Expressions;
 
-namespace Domain.Specifications
+namespace MerchandisingManagement.Domain.Specifications
 {
 	public interface IBaseSpecification<T>
 	{

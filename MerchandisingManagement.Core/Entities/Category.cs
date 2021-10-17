@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Domain.Entities
+namespace MerchandisingManagement.Domain.Entities
 {
 	public class Category : BaseEntity
 	{

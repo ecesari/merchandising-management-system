@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Application.Common.Mappers;
-using Application.Product.Commands;
-using Application.Product.Queries.GetProducts;
-using Application.Product.Queries.SearchProducts;
 using AutoMapper;
+using MerchandisingManagement.Application.Common.Mappers;
+using MerchandisingManagement.Application.Product.Commands;
+using MerchandisingManagement.Application.Product.Queries.GetProducts;
+using MerchandisingManagement.Application.Product.Queries.SearchProducts;
 using Xunit;
 
-namespace Application.UnitTests.Common.Mapper
+namespace MerchandisingManagement.Application.UnitTests.Common.Mapper
 {
 	public class MapperTests
 	{

@@ -2,10 +2,10 @@
 using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
-using Domain.Repositories;
 using MediatR;
+using MerchandisingManagement.Domain.Repositories;
 
-namespace Application.Product.Commands
+namespace MerchandisingManagement.Application.Product.Commands
 {
 	public class UpdateProductCommand : IRequest
 	{

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Infrastructure.UnitTests.Repository
+﻿namespace MerchandisingManagement.Infrastructure.UnitTests.Repository
 {
 	class ProductTests
 	{

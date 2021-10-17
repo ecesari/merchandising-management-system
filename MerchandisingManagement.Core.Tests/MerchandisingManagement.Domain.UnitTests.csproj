@@ -5,9 +5,9 @@
 
     <IsPackable>false</IsPackable>
 
-    <AssemblyName>Domain.UnitTests</AssemblyName>
+    <AssemblyName>MerchandisingManagement.Domain.UnitTests</AssemblyName>
 
-    <RootNamespace>Domain.UnitTests</RootNamespace>
+    <RootNamespace>MerchandisingManagement.Domain.UnitTests</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MerchandisingManagement.Core\Domain.csproj" />
+    <ProjectReference Include="..\MerchandisingManagement.Core\MerchandisingManagement.Domain.csproj" />
   </ItemGroup>
 
 </Project>

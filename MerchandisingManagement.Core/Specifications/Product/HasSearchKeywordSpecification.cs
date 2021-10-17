@@ -1,4 +1,4 @@
-﻿namespace Domain.Specifications.Product
+﻿namespace MerchandisingManagement.Domain.Specifications.Product
 {
 	public class HasSearchKeywordSpecification : BaseSpecification<Entities.Product>
 	{

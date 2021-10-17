@@ -1,11 +1,11 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
-using Domain.Repositories;
-using Domain.Specifications.Product;
 using MediatR;
+using MerchandisingManagement.Domain.Repositories;
+using MerchandisingManagement.Domain.Specifications.Product;
 
-namespace Application.Product.Queries.SearchProducts
+namespace MerchandisingManagement.Application.Product.Queries.SearchProducts
 {
 	public class SearchProductsQuery : IRequest<SearchProductsViewModel>
 	{

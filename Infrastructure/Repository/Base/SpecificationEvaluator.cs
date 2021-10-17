@@ -1,9 +1,9 @@
 ﻿using System.Linq;
-using Domain.Entities;
-using Domain.Specifications;
+using MerchandisingManagement.Domain.Entities;
+using MerchandisingManagement.Domain.Specifications;
 using Microsoft.EntityFrameworkCore;
 
-namespace Infrastructure.Repository.Base
+namespace MerchandisingManagement.Infrastructure.Repository.Base
 {
 	public class SpecificationEvaluator<T> where T : BaseEntity
 	{

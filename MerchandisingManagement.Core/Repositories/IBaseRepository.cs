@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Domain.Entities;
-using Domain.Specifications;
+using MerchandisingManagement.Domain.Entities;
+using MerchandisingManagement.Domain.Specifications;
 
-namespace Domain.Repositories
+namespace MerchandisingManagement.Domain.Repositories
 {
 	public interface IBaseRepository<T> where T : BaseEntity
 	{

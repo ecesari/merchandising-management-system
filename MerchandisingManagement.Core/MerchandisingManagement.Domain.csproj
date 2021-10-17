@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <AssemblyName>Domain</AssemblyName>
-    <RootNamespace>Domain</RootNamespace>
+    <AssemblyName>MerchandisingManagement.Domain</AssemblyName>
+    <RootNamespace>MerchandisingManagement.Domain</RootNamespace>
   </PropertyGroup>
 
 </Project>

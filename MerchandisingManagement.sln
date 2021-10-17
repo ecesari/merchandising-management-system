@@ -3,25 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "MerchandisingManagement.Core\Domain.csproj", "{D7A253E9-F3DA-4E38-913C-839AA483D45D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MerchandisingManagement.Domain", "MerchandisingManagement.Core\MerchandisingManagement.Domain.csproj", "{D7A253E9-F3DA-4E38-913C-839AA483D45D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.UnitTests", "MerchandisingManagement.Core.Tests\Domain.UnitTests.csproj", "{FD1F6124-5C03-48F5-ACF9-EBF794BF1BEC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MerchandisingManagement.Domain.UnitTests", "MerchandisingManagement.Core.Tests\MerchandisingManagement.Domain.UnitTests.csproj", "{FD1F6124-5C03-48F5-ACF9-EBF794BF1BEC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7E43070A-7FB7-4AF0-970A-0ADF168D3F84}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{CB440942-C5EB-454F-96CB-0DF465495DAD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MerchandisingManagement.Infrastructure", "Infrastructure\MerchandisingManagement.Infrastructure.csproj", "{CB440942-C5EB-454F-96CB-0DF465495DAD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Application\Application.csproj", "{ABE3576D-EEA2-42D5-8FA2-1917D97D4319}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MerchandisingManagement.Application", "Application\MerchandisingManagement.Application.csproj", "{ABE3576D-EEA2-42D5-8FA2-1917D97D4319}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApi", "WebApi\WebApi.csproj", "{ADCFC0C6-4E5C-4A1A-B41E-8AB643505F96}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MerchandisingManagement.WebApi", "WebApi\MerchandisingManagement.WebApi.csproj", "{ADCFC0C6-4E5C-4A1A-B41E-8AB643505F96}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{48CF5474-2B45-40C3-B4C4-97D82A759A39}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure.UnitTests", "Infrastructure.UnitTests\Infrastructure.UnitTests.csproj", "{B08EFFF9-D234-4E73-B335-2E018A93CDCE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MerchandisingManagement.Infrastructure.UnitTests", "Infrastructure.UnitTests\MerchandisingManagement.Infrastructure.UnitTests.csproj", "{B08EFFF9-D234-4E73-B335-2E018A93CDCE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.UnitTests", "Application.UnitTests\Application.UnitTests.csproj", "{92C248FC-0930-4148-8C8E-22D92AE68E68}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MerchandisingManagement.Application.UnitTests", "Application.UnitTests\MerchandisingManagement.Application.UnitTests.csproj", "{92C248FC-0930-4148-8C8E-22D92AE68E68}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplicationIntegrationTests", "ApplicationIntegrationTests\ApplicationIntegrationTests.csproj", "{C058C7D4-0F61-470A-B132-540A88A11E37}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MerchandisingManagement.ApplicationIntegrationTests", "ApplicationIntegrationTests\MerchandisingManagement.ApplicationIntegrationTests.csproj", "{C058C7D4-0F61-470A-B132-540A88A11E37}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,15 +1,17 @@
-using Domain.Repositories;
+using AutoMapper;
+using MerchandisingManagement.Application.Common.Mappers;
+using MerchandisingManagement.Domain.Repositories;
+using MerchandisingManagement.Infrastructure.Data;
+using MerchandisingManagement.Infrastructure.Repository;
+using MerchandisingManagement.Infrastructure.Repository.Base;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Infrastructure.Data;
-using Infrastructure.Repository;
-using Infrastructure.Repository.Base;
-using Microsoft.EntityFrameworkCore;
 
-namespace WebApi
+namespace MerchandisingManagement.WebApi
 {
 	public class Startup
 	{
@@ -28,6 +30,8 @@ namespace WebApi
 				options.UseSqlServer(
 					Configuration.GetConnectionString("MerchandisingManagementDB")), ServiceLifetime.Singleton);
 
+
+
 			//services.AddSwaggerGen(c => {
 			//	c.SwaggerDoc("v1", new OpenApiInfo
 			//	{
@@ -36,18 +40,20 @@ namespace WebApi
 			//	});
 			//});
 			#region AutoMapper Configuration
-			//var mapperConfig = new MapperConfiguration(mc =>
-			//{
-			//	mc.AddProfile(new MapperConfig());
+			var mapperConfig = new MapperConfiguration(mc =>
+			{
+				mc.AddProfile(new MapperConfig());
 
-			//});
+			});
 
-			//var mapper = mapperConfig.CreateMapper();
-			//services.AddSingleton(mapper);
+			var mapper = mapperConfig.CreateMapper();
+			services.AddSingleton(mapper);
 			#endregion
 			//services.AddMediatR(typeof(CreateEmployeeHandler).GetTypeInfo().Assembly);
+			#region Dependencies
 			services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
-			services.AddTransient<IProductRepository, ProductRepository>();
+			services.AddTransient<IProductRepository, ProductRepository>(); 
+			#endregion
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -56,6 +62,11 @@ namespace WebApi
 			if (env.IsDevelopment())
 			{
 				app.UseDeveloperExceptionPage();
+			}
+			using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
+			{
+				var context = serviceScope.ServiceProvider.GetRequiredService<MerchandisingManagementContext>();
+				context.Database.EnsureCreated();
 			}
 
 			app.UseHttpsRedirection();

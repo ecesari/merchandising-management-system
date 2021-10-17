@@ -1,7 +1,7 @@
-using Domain.Entities;
+using MerchandisingManagement.Domain.Entities;
 using Xunit;
 
-namespace Domain.UnitTests.Entities
+namespace MerchandisingManagement.Domain.UnitTests.Entities
 {
 	public class CategoryTests
 	{
