@@ -11,12 +11,12 @@ namespace MerchandisingManagement.Application.Product.Queries.GetProducts
 	{
 	}
 
-	public class GetProductsWithPaginationQueryHandler : IRequestHandler<GetProductsQuery, GetProductsViewModel>
+	public class GetProductsQueryHandler : IRequestHandler<GetProductsQuery, GetProductsViewModel>
 	{
 		private readonly IProductRepository _productRep;
 		private readonly IMapper _mapper;
 
-		public GetProductsWithPaginationQueryHandler(IProductRepository productRep, IMapper mapper)
+		public GetProductsQueryHandler(IProductRepository productRep, IMapper mapper)
 		{
 			_productRep = productRep;
 			_mapper = mapper;

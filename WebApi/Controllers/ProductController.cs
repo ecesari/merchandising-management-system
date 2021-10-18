@@ -55,7 +55,7 @@ namespace MerchandisingManagement.WebApi.Controllers
 				return new BadRequestResult();
 			}
 
-			await Mediator.Send(command);
+			await _mediator.Send(command);
 
 			return new NoContentResult();
 		}
@@ -63,7 +63,7 @@ namespace MerchandisingManagement.WebApi.Controllers
 		[HttpDelete("{id}")]
 		public async Task<ActionResult> Delete(int id)
 		{
-			await Mediator.Send(new DeleteProductCommand { Id = id });
+			await _mediator.Send(new DeleteProductCommand { Id = id });
 
 			return new NoContentResult();
 		}
