@@ -26,8 +26,8 @@ namespace MerchandisingManagement.Application.Product.Queries.SearchProducts
 		public async Task<SearchProductsViewModel> Handle(SearchProductsQuery request, CancellationToken cancellationToken)
 		{
 			var keywordSpecification = new HasSearchKeywordSpecification(request.SearchQuery);
-			var specification = new HasStockOfCategorySpecification(keywordSpecification.Criteria);
-			var entities = await _productRep.GetAsync(specification);
+			//var specification = new HasStockOfCategorySpecification(keywordSpecification.Criteria);
+			var entities = await _productRep.GetAsync(keywordSpecification);
 			var viewModel = _mapper.Map<SearchProductsViewModel>(entities);
 			return await Task.FromResult(viewModel);
 		}

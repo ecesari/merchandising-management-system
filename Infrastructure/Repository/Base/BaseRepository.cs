@@ -49,9 +49,10 @@ namespace MerchandisingManagement.Infrastructure.Repository.Base
 			return await _merchandisingManagementContext.Set<T>().FindAsync(id);
 		}
 
-		public Task UpdateAsync(T entity)
+		public async Task UpdateAsync(T entity)
 		{
-			throw new NotImplementedException();
+			 _merchandisingManagementContext.Entry(entity).State = EntityState.Modified;
+			 await _merchandisingManagementContext.SaveChangesAsync();
 		}
 
 		private IQueryable<T> ApplySpecification(IBaseSpecification<T> spec)

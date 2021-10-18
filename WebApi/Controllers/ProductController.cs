@@ -25,7 +25,6 @@ namespace MerchandisingManagement.WebApi.Controllers
 		/// Get all products, unfiltered
 		/// </summary>
 		[HttpGet]
-
 		public async Task<ActionResult<GetProductsViewModel>> GetProducts([FromQuery] GetProductsQuery query)
 		{
 			return await _mediator.Send(query);
@@ -33,17 +32,14 @@ namespace MerchandisingManagement.WebApi.Controllers
 
 		/// <param name="query">Products list</param>
 
-		//[HttpGet("/search")]
-		[Route("[action]")]
-
+		[HttpGet("GetByKeyword")]
 		public async Task<ActionResult<SearchProductsViewModel>> SearchProducts([FromQuery] SearchProductsQuery query)
 		{
 			return await _mediator.Send(query);
 		}
 
 		/// <param name="query">Products list</param>
-		//[HttpGet("/getByStockRange")]
-		[Route("[action]")]
+		[HttpGet("GetByStock")]
 		public async Task<ActionResult<ProductByStockRangeViewModel>> GetProductsInStockRange([FromQuery] GetProductsByStockRangeQuery query)
 		{
 			return await _mediator.Send(query);
@@ -51,28 +47,27 @@ namespace MerchandisingManagement.WebApi.Controllers
 
 
 		[HttpPost]
+		[Route("~/api/CreateProduct")]
 		public async Task<ActionResult<int>> CreateProduct(CreateProductCommand command)
 		{
 			return await _mediator.Send(command);
 		}
 
-		[HttpPut("{id}")]
-		public async Task<ActionResult> Update(int id, UpdateProductCommand command)
-		{
-			if (id != command.Id)
-			{
-				return new BadRequestResult();
-			}
+		[HttpPut]
+		[Route("~/api/UpdateProduct")]
 
+		public async Task<ActionResult> Update(UpdateProductCommand command)
+		{
 			await _mediator.Send(command);
 
 			return new NoContentResult();
 		}
 
-		[HttpDelete("{id}")]
-		public async Task<ActionResult> Delete(int id)
+		[HttpDelete]
+		[Route("~/api/DeleteProduct")]
+		public async Task<ActionResult> Delete(DeleteProductCommand command)
 		{
-			await _mediator.Send(new DeleteProductCommand { Id = id });
+			await _mediator.Send(command);
 
 			return new NoContentResult();
 		}
