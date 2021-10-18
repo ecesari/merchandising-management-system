@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 
 namespace MerchandisingManagement.WebApi
 {
@@ -15,6 +16,12 @@ namespace MerchandisingManagement.WebApi
 				.ConfigureWebHostDefaults(webBuilder =>
 				{
 					webBuilder.UseStartup<Startup>();
+				})
+				.ConfigureLogging(logging =>
+				{
+					logging.ClearProviders();
+					logging.AddConsole();
+
 				});
 	}
 }

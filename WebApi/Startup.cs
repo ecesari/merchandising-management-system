@@ -1,3 +1,4 @@
+using System.IO;
 using AutoMapper;
 using MerchandisingManagement.Application.Common.Mappers;
 using MerchandisingManagement.Domain.Repositories;
@@ -11,6 +12,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MediatR;
+using Microsoft.Extensions.Logging;
 
 namespace MerchandisingManagement.WebApi
 {
