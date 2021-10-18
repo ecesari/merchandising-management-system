@@ -21,7 +21,9 @@ namespace MerchandisingManagement.WebApi.Controllers
 			_mediator = mediator;
 		}
 
-
+		/// <summary>
+		/// Get all products, unfiltered
+		/// </summary>
 		[HttpGet]
 
 		public async Task<ActionResult<GetProductsViewModel>> GetProducts([FromQuery] GetProductsQuery query)
@@ -29,17 +31,24 @@ namespace MerchandisingManagement.WebApi.Controllers
 			return await _mediator.Send(query);
 		}
 
-		[HttpGet]
+		/// <param name="query">Products list</param>
+
+		//[HttpGet("/search")]
+		[Route("[action]")]
+
 		public async Task<ActionResult<SearchProductsViewModel>> SearchProducts([FromQuery] SearchProductsQuery query)
 		{
 			return await _mediator.Send(query);
 		}
-		
-		[HttpGet]
+
+		/// <param name="query">Products list</param>
+		//[HttpGet("/getByStockRange")]
+		[Route("[action]")]
 		public async Task<ActionResult<ProductByStockRangeViewModel>> GetProductsInStockRange([FromQuery] GetProductsByStockRangeQuery query)
 		{
 			return await _mediator.Send(query);
 		}
+
 
 		[HttpPost]
 		public async Task<ActionResult<int>> CreateProduct(CreateProductCommand command)
